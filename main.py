@@ -98,8 +98,8 @@ class Checker(httpx.Client):
                         "IsInsulated": "0",
                         "IsSuspected": "0",
                         "IsDiagnosis": "0",
-			"toucherinfolist": [],
-			"dailyinfo": {
+			# "toucherinfolist": [],
+			# "dailyinfo": {
                     		"IsVia": "0",
                     		"DateTrip": ""
                 	},
@@ -108,7 +108,13 @@ class Checker(httpx.Client):
                         "BackState": 1,
                         # 'MorningTemp': f'36.{randint(*interval)}',
                         # 'NightTemp': f'36.{randint(*interval)}',
-                        "tripinfolist": []
+                        "tripinfolist": [{
+                    		"aTripDate": "",
+                    		"FromAdr": "",
+                    		"ToAdr": "",
+                    		"Number": "",
+                    		"trippersoninfolist": []
+                	}]
                     }
                 ).json()['msg']
                 if message in self.configs['success_tint']:
