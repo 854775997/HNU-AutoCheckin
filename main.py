@@ -108,8 +108,8 @@ class Checker(httpx.Client):
                     		"DateTrip": ""
                 	},
 			"IsInCampus": "1",
-                	# "IsViaHuBei": "0",
-                	# "IsViaWuHan": "0",
+                	"IsViaHuBei": "0",
+                	"IsViaWuHan": "0",
 			"InsulatedAddress": "",
                 	"TouchInfo": "",
 			"IsNormalTemperature": "1",
