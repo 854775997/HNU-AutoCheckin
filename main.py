@@ -99,7 +99,7 @@ class Checker(httpx.Client):
                         "IsSuspected": "0",
                         "IsDiagnosis": "0",
 			# "toucherinfolist": [],
-			# "dailyinfo": {
+			"dailyinfo": {
                     		"IsVia": "0",
                     		"DateTrip": ""
                 	},
