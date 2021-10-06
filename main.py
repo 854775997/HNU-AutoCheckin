@@ -110,9 +110,9 @@ class Checker(httpx.Client):
 			"InsulatedAddress": "",
                 	"TouchInfo": "",
 			"IsNormalTemperature": "1",
-                        "BackState": 1,
-                        "MorningTemp": f'36.{randint(*interval)}',
-                        "NightTemp": f'36.{randint(*interval)}',
+                        # "BackState": 1,
+                        # "MorningTemp": f'36.{randint(*interval)}',
+                        # "NightTemp": f'36.{randint(*interval)}',
 			"Longitude": None,
                         "Latitude": None
                     }
