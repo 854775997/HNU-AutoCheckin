@@ -106,8 +106,8 @@ class Checker(httpx.Client):
 			"InsulatedAddress": "",
                 	"TouchInfo": "",
                         "BackState": 1,
-                        # 'MorningTemp': f'36.{randint(*interval)}',
-                        # 'NightTemp': f'36.{randint(*interval)}',
+                        'MorningTemp': f'36.{randint(*interval)}',
+                        'NightTemp': f'36.{randint(*interval)}',
                         "tripinfolist": [{
                     		"aTripDate": "",
                     		"FromAdr": "",
