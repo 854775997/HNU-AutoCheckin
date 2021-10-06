@@ -83,24 +83,38 @@ class Checker(httpx.Client):
                         }
                     },
                     json={
-                        'Longitude': None,
-                        'Latitude': None,
+			"Temperature": None,
+                        "Longitude": None,
+                        "Latitude": None,
                         "IsNormalTemperature": "1",
-                        'RealProvince': self.configs['address'][0],
-                        'RealCity': self.configs['address'][1],
-                        'RealCounty': self.configs['address'][2],
-                        'RealAddress': self.configs['address'][3],
+                        "RealProvince": self.configs['address'][0],
+                        "RealCity": self.configs['address'][1],
+                        "RealCounty": self.configs['address'][2],
+                        "RealAddress": self.configs['address'][3],
                         "IsUnusual": "0",
                         "UnusualInfo": "",
                         "IsTouch": "0",
-		                "QRCodeColor": "绿色" ,
+		        "QRCodeColor": "绿色" ,
                         "IsInsulated": "0",
                         "IsSuspected": "0",
                         "IsDiagnosis": "0",
-                        'BackState': 1,
-                        'MorningTemp': f'36.{randint(*interval)}',
-                        'NightTemp': f'36.{randint(*interval)}',
-                        'tripinfolist': []
+			"toucherinfolist": [],
+			"dailyinfo": {
+                    		"IsVia": "0",
+                    		"DateTrip": ""
+                	},
+			"InsulatedAddress": "",
+                	"TouchInfo": "",
+                        # 'BackState': 1,
+                        # 'MorningTemp': f'36.{randint(*interval)}',
+                        # 'NightTemp': f'36.{randint(*interval)}',
+                        "tripinfolist": [{
+                    		"aTripDate": "",
+                    		"FromAdr": "",
+                    		"ToAdr": "",
+                    		"Number": "",
+                    		"trippersoninfolist": []
+                	}]
                     }
                 ).json()['msg']
                 if message in self.configs['success_tint']:
