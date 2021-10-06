@@ -84,9 +84,6 @@ class Checker(httpx.Client):
                     },
                     json={
 			"Temperature": None,
-                        "Longitude": None,
-                        "Latitude": None,
-                        "IsNormalTemperature": "1",
                         "RealProvince": self.configs['address'][0],
                         "RealCity": self.configs['address'][1],
                         "RealCounty": self.configs['address'][2],
@@ -98,6 +95,13 @@ class Checker(httpx.Client):
                         "IsInsulated": "0",
                         "IsSuspected": "0",
                         "IsDiagnosis": "0",
+			"tripinfolist": [{
+                    		"aTripDate": "",
+                    		"FromAdr": "",
+                    		"ToAdr": "",
+                    		"Number": "",
+                    		"trippersoninfolist": []
+                	}],
 			"toucherinfolist": [],
 			"dailyinfo": {
                     		"IsVia": "0",
@@ -105,16 +109,12 @@ class Checker(httpx.Client):
                 	},
 			"InsulatedAddress": "",
                 	"TouchInfo": "",
+			"IsNormalTemperature": "1",
                         "BackState": 1,
                         "MorningTemp": f'36.{randint(*interval)}',
                         "NightTemp": f'36.{randint(*interval)}',
-                        "tripinfolist": [{
-                    		"aTripDate": "",
-                    		"FromAdr": "",
-                    		"ToAdr": "",
-                    		"Number": "",
-                    		"trippersoninfolist": []
-                	}]
+			"Longitude": None,
+                        "Latitude": None
                     }
                 ).json()['msg']
                 if message in self.configs['success_tint']:
